@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: white;
+}
+
+#myAnimation {
+  position:absolute;
+ 
+}
+    </style>
+    <body>
+        <p>
+            <button onclick="myMove()">
+                Click Me
+            </button>
+        </p>
+        <div id="myContainer">
+            <div id="myAnimation">
+                <svg height="180" width="400">
+                    <rect height="100" style="fill:blue;stroke:blue;stroke-width:5;fill-opacity:1;stroke-opacity:1" width="100" x="0" y="50">
+                    </rect>
+                </svg>
+            </div>
+        </div>
+        <script>
+            function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 410) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+        </script>
+    </body>
+</html>
